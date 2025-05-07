@@ -6,9 +6,9 @@ Que uso e estudo para melhorar acada dia!!!
 
 # Tecnologias utilizadas
 - HTML
--css
--javascript
--claudi
+-CSS
+-JAVASCRIPT
+-CLAUDI
 
 # Como usar
 
