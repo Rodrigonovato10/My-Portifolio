@@ -51,7 +51,7 @@ header::after {
       #2ECC71 80%,
       #FF5E7D 100%
   );
-  background-size: 200% auto;
+  background-size: 100% auto;
   animation: gradient 5s linear infinite;
 }
 
@@ -400,8 +400,6 @@ margin-bottom: 20px;
     #2ECC71 80%, 
     #FF5E7D 100%
     ) 1;
-
-
 
 }
 .projetos h2 {
@@ -1712,7 +1710,7 @@ font-size: 100%;
 /* Estilos do carrossel projetos */
   .prt-project-card {
       min-width: 350px;
-      height: 300px;
+      height: 400px;
       margin: 0 9px;
   }
   
