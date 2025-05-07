@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu com Elemento Ativo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            min-height: 100vh;
+            background-color: #050404;
+        }
+        
+        /* Estilo básico da navegação */
+        nav {
+            position: relative;
+            z-index: 1;
+            background-color: rgb(230, 18, 18);
+            padding: 15px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+        
+        nav li {
+            position: relative;
+        }
+        
+        nav button {
+            font-size: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px 5px;
+            position: relative;
+            z-index: 2;
+            color: #555;
+            transition: color 0.3s;
+        }
+        
+        /* Estilo do elemento ativo */
+        .active-element {
+            position: absolute;
+            height: 40px;
+            width: 80px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border-radius: 8px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1;
+        }
+        
+        /* Quando o botão está ativo */
+        li.active button {
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Efeito de fundo do gradiente */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 40% -60% 0% -60%;
+            background: linear-gradient(45deg, #6e8efb, #a777e3);
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(50px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="active-element"></div>
+        <ul>
+            <li class="active" data-position="0">
+                <button>Home</button>
+            </li>
+            <li data-position="1">
+                <button>Projetos</button>
+            </li>
+            <li data-position="2">
+                <button>Sobre</button>
+            </li>
+            <li data-position="3">
+                <button>Contatos</button>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        // Pegando todos os itens do menu
+        const items = document.querySelectorAll('nav ul li');
+        const activeElement = document.querySelector('.active-element');
+        
+        // Configuração inicial - posicionar o elemento ativo no item ativo
+        function updateActiveElement(item) {
+            // Removendo classe ativa de todos os itens
+            items.forEach(i => i.classList.remove('active'));
+            
+            // Adicionando classe ativa ao item clicado
+            item.classList.add('active');
+            
+            // Atualizando a posição do elemento ativo
+            activeElement.style.left = `${item.offsetLeft}px`;
+            activeElement.style.width = `${item.offsetWidth}px`;
+        }
+        
+        // Inicialização - definir posição inicial no item "Home"
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeItem = document.querySelector('.active');
+            updateActiveElement(activeItem);
+        });
+        
+        // Adicionar evento de clique para cada item
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                updateActiveElement(item);
+            });
+        });
+    </script>
+</body>
+</html>
