@@ -12,4 +12,4 @@ Que uso e estudo para melhorar acada dia!!!
 
 # Como usar
 
-Acesse o link: 
+Acesse o link: https://rodrigonovato10.github.io/My-Portifolio/
