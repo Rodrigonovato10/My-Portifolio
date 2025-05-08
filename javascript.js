@@ -204,3 +204,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   });
 });
+
+// ====================================================
+// EFEITOS PARA CELULARES
+// ====================================================   
+document.querySelectorAll('li a').forEach(link => {
+  link.addEventListener('touchend', function() {
+    // Adiciona a classe touched
+    this.classList.add('touched');
+    
+    // Remove a classe após a animação terminar
+    setTimeout(() => {
+      this.classList.remove('touched');
+    }, 300); // 300ms = duração da transição
+  });
+});

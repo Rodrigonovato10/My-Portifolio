@@ -106,17 +106,42 @@ li a::after {
   opacity: 0; /* Inicialmente invisível */
 }
 
-/* Efeito hover para mudar a cor do texto */
-li a:hover {
-  color: #b20f0f;
+/* Para dispositivos com mouse (desktop/laptop) */
+@media (hover: hover) {
+  /* Efeito hover para mudar a cor do texto */
+  li a:hover {
+    color: #b20f0f;
+  }
+  
+  /* Efeito hover para mostrar o sublinhado */
+  li a:hover::after {
+    width: 100%; /* Expande para 100% da largura */
+    opacity: 1; /* Torna visível */
+  }
 }
 
-/* Efeito hover para mostrar o sublinhado */
-li a:hover::after {
-  width: 100%; /* Expande para 100% da largura */
-  opacity: 1; /* Torna visível */
+/* Para dispositivos de toque (celulares/tablets) */
+@media (hover: none) {
+  /* Estilo específico para o toque */
+  li a:active {
+    color: #b20f0f;
+  }
+  
+  li a:active::after {
+    width: 100%;
+    opacity: 1;
+  }
+  
+  /* Reset automático após o toque */
+  li a.touched {
+    color: #0748d6;
+  }
+  
+  li a.touched::after {
+    width: 0;
+    opacity: 0;
+  }
 }
-
 
 /*Estilos Principal */
 .principal{
@@ -499,7 +524,7 @@ align-items: center;
     padding: 0px;
 }
 
-.texto-min{
+    .texto-min{
     font-size: 60%;
     color: #d6dff2;
     text-align: center;
@@ -1707,6 +1732,9 @@ font-size: 100%;
       font-size: 16px;
       padding: 6px 8px;
   }
+
+  
+
 /* Estilos do carrossel projetos */
   .prt-project-card {
       min-width: 350px;
