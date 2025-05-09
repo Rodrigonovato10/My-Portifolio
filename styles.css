@@ -241,6 +241,12 @@ margin-bottom: 20px;
     border-top: 3px solid transparent;
   }
   
+  .comercio{
+  background: linear-gradient(45deg, #df0101, #ba8f05);
+  font-size: 20px;
+  font-weight: bold;
+}
+
   /* Cores vibrantes para cada card */
   .prt-project-card:nth-child(1) {
     border-color: #FF5E7D; /* Rosa vibrante */
@@ -262,6 +268,15 @@ margin-bottom: 20px;
     border-color: #2ECC71; /* Verde vibrante */
   }
   
+  .prt-project-card:nth-child(6) {
+    border-color: #030abe; /* Verde vibrante */
+  }
+  
+  .prt-project-card:nth-child(7) {
+    border-color: #d60d93; /* Verde vibrante */
+  }
+  
+
   .prt-project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 
@@ -328,6 +343,14 @@ margin-bottom: 20px;
     background: linear-gradient(45deg, #2ECC71, #3498DB);
   }
   
+  .prt-project-card:nth-child(6) .prt-project-tag {
+    background: linear-gradient(45deg, #011992, #3498DB);
+  }
+
+  .prt-project-card:nth-child(7) .prt-project-tag {
+    background: linear-gradient(45deg, #1c80a5, #d7059c);
+  }
+
   .prt-carousel-nav {
     display: flex;
     justify-content: center;
